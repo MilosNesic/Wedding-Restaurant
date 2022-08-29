@@ -1,0 +1,105 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>Restoran MN</title>
+	
+		<meta charset="UTF-8">
+		<meta name="autor" content="Milos Nesic">
+		<meta name="description" content="Seminarski iz veb programiranja">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" >
+		
+		<link rel="stylesheet" type="text/css" href="rezervacije.css" media="screen and (min-width: 800px)">
+	</head>
+
+	<body>
+	
+		<header>
+			<div id="div_heder">
+				<img id="logo" src="logo.png" alt="logo">
+				<nav>
+					<a href="glavna.html">Početna</a>
+					<div class="dropdown">
+						<a class="dropbtn">Jelovnik</a>
+						<div class="dropdown-content">
+						  <a href="jelovnik1.html">Jelovnik 1</a>
+						  <a href="jelovnik2.html">Jelovnik 2</a>
+						  <a href="jelovnik3.html">Jelovnik 3</a>
+						</div>
+					</div>
+					<a href="rezervacije.html" id="link_za_rezervacije">Rezervacije</a>
+					<a href="">Utisci</a>
+				</nav>
+			</div>
+		</header>
+		
+		<main>
+			<div id="glavni_div">
+				<form id="rezervacija" >
+					<div>
+						<label for="datum">Izaberi datum:</label>
+						<br>
+						<input id="datum" type="date"></input>
+					</div>
+					<div>
+						<label for="selekt_jelovnik">Izaberi jelovnik:</label>
+						<br>
+						<select id="selekt_jelovnik">
+							<option value="-">--select--</option>
+							<option value="Jelovnik 1">Jelovnik 1</option>
+							<option value="Jelovnik 2">Jelovnik 2</option>
+							<option value="Jelovnik 3">Jelovnik 3</option>
+						</select>
+					</div>
+					<div>
+						<label for="br_gostiju">Broj gostiju:</label>
+						<br>
+						<input id="br_gostiju" type="text"></input>
+					</div>
+						<input id="submit_dugme" type="submit" value="Rezervisi"></input>
+					<div>
+						
+					</div>
+				</form>
+			</div>
+		</main>
+		
+		<footer>
+			<div id="glavni_footer_div">
+				<div id="footer_div_levi">
+					<p>Kontakt:
+						<br>Adresa: selo Orašac
+						<br>Tel: 555-555
+						<br>Mail: nekimail@gmail.com
+					</p>
+					
+				</div>
+				
+			</div>
+		</footer>
+
+		<script>
+			var rezervacija=document.querySelector("#rezervacija");
+			rezervacija.onsubmit=function(){
+			
+				var datum=document.querySelector("#datum").value;
+				var jelovnik=document.querySelector("#selekt_jelovnik").value;
+				var br_gostiju=document.querySelector("#br_gostiju").value;
+				
+				if(datum.length==0){
+					window.alert("Niste izabrali datum");
+				}
+				else if(jelovnik=="-"){
+					window.alert("Niste odabrali jelovnik");
+				}
+				else if(br_gostiju.length==0){
+					window.alert("Niste uneli broj gostiju");
+				}
+				else {
+					window.alert("Odabrali ste "+jelovnik+" broj gostiju je "+br_gostiju+" i datum je "+datum );
+				}
+			}
+		</script>
+		
+	</body>
+</html>
